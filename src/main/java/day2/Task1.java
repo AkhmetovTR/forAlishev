@@ -14,7 +14,7 @@ public class Task1 {
             if(floor>=5 && floor<= 8){
                 System.out.println("Среднеэтажный дом");
             }
-            if(floor>=9){
+            else{
                 System.out.println("Многоэтажный дом");
             }
         }

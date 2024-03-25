@@ -8,9 +8,13 @@ public class Task4 {
         int[] numbers = new int[100];
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = (int) Math.round(Math.random() * 10000);
+            System.out.println(numbers[i] + "  " + i);
         }
         for (int i = 0; i < numbers.length - 2; i++) {
-            sumElem = numbers[i] + numbers[i + 1] + numbers[i + 2];
+            sumElem = 0;
+            for (int j = 0; j < 3; j++) {
+                sumElem += numbers[i + j];
+            }
             if (maxSumElem < sumElem) {
                 maxSumElem = sumElem;
                 posElem = i;

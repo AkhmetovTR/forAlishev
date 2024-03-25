@@ -7,11 +7,10 @@ public class Task2 {
 
         Scanner in = new Scanner(System.in);
         boolean i = true;
-        while (i) {
+        while (true) {
             double a = in.nextDouble();
             double b = in.nextDouble();
             if (b == 0) {
-                i = false;
                 break;
             }
             double result = a/b;
