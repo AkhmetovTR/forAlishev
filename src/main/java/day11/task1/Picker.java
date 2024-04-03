@@ -4,6 +4,9 @@ public class Picker implements Worker {
     private int salary = 0;
     private boolean isPayed;
     private Warehouse warehouse;
+    private final int bonusQuantity = 70000;
+    private final int salaryQuantity = 80;
+    private final int bonusGoal = 10000;
 
     public Picker(Warehouse warehouse) {
         this.warehouse = warehouse;
@@ -23,7 +26,7 @@ public class Picker implements Worker {
 
     @Override
     public void doWork() {
-        salary += 80;
+        salary += salaryQuantity;
         warehouse.upCountPickedOrders();
     }
 
@@ -31,10 +34,10 @@ public class Picker implements Worker {
     public void bonus() {
         if (isPayed == true) {
             System.out.println("Бонус уже был выплачен");
-        } else if (warehouse.getCountPickedOrders() < 10000) {
+        } else if (warehouse.getCountPickedOrders() < bonusGoal) {
             System.out.println("Бонус пока не доступен");
         } else {
-            salary += 70000;
+            salary += bonusQuantity;
             isPayed = true;
         }
     }

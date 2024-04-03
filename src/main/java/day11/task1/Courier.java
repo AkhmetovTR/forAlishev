@@ -5,6 +5,10 @@ public class Courier implements Worker {
     private boolean isPayed;
     private Warehouse warehouse;
 
+    private final int bonusQuantity = 50000;
+    private final int salaryQuantity = 100;
+    private final int bonusGoal = 10000;
+
     public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
@@ -23,7 +27,7 @@ public class Courier implements Worker {
 
     @Override
     public void doWork() {
-        salary += 100;
+        salary += salaryQuantity;
         warehouse.upCountDeliveredOrders();
     }
 
@@ -31,10 +35,10 @@ public class Courier implements Worker {
     public void bonus() {
         if (isPayed == true) {
             System.out.println("Бонус уже был выплачен");
-        } else if (warehouse.getCountDeliveredOrders() < 10000) {
+        } else if (warehouse.getCountDeliveredOrders() < bonusGoal) {
             System.out.println("Бонус пока не доступен");
         } else {
-            salary += 50000;
+            salary += bonusQuantity;
             isPayed = true;
         }
     }
