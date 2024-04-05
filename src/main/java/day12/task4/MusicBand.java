@@ -35,9 +35,7 @@ public class MusicBand {
                 '}';
     }
     public static void transferMembers(MusicBand a, MusicBand b){
-       List<String>newMembers = new ArrayList<>(b.members);
-       newMembers.addAll(a.members);
-       b.members=newMembers;
-       a.members=new ArrayList<>();
+      b.members.addAll(a.members);
+      a.members.clear();
     }
 }
