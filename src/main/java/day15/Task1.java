@@ -10,11 +10,9 @@ public class Task1 {
     public static void main(String[] args) {
         String sepatator = File.separator;
         File fileIn = new File("src" + sepatator + "main" + sepatator + "resources" + sepatator + "shoes.csv");
-        Scanner scanner = null;
         int quantity;
         int size;
-        try {
-            scanner = new Scanner(fileIn);
+        try (Scanner scanner = new Scanner(fileIn)) {
             PrintWriter printWriter = new PrintWriter("src" + sepatator + "main" + sepatator + "resources" + sepatator + "missing_shoes.txt");
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
