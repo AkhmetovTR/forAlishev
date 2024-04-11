@@ -3,7 +3,6 @@ package day14;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task1 {
@@ -21,7 +20,6 @@ public class Task1 {
             if (numbersString.length != 10) {
                 throw new IOException();
             }
-            //тут надо добавить исключение по колличеству
             int[] numbers = new int[10];
             int counter = 0;
             for (String number : numbersString) {
